@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nested Include</title>
+
+    <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+  </head>
+  <body>
+    <%= include('test/fixtures/includes/nested_world.us') %>
+    <script type="text/javascript" src="<%= js %>"></script>
+  </body>
+</html>
