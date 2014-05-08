@@ -31,28 +31,34 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     compiled_pages: {
       options: {
-        htmlAsHandlebars: false
-      },
-      context: {
-        global_variable: 'global'
-      },
-      htmlAsUnderscoreTests: {
-
-      },
-      underscoreTests: {
-        options: {
-          htmlAsHandlebars: true,
-          anotherRandomOption: true
-        },
+        htmlAsHandlebars: false,
         context: {
           css: 'app/styles.css',
           js: 'app/scripts.js'
+        }
+      },
+      htmlAsUnderscoreTests: {
+        context: {
+          
         },
         files: {
-          'tmp/basic_underscore_template.html': ['test/fixtures/underscore/basic_template.us'],
-          'tmp/single_underscore_include.html': ['test/fixtures/underscore/single_include.us'],
-          'tmp/multiple_underscore_include.html': ['test/fixtures/underscore/multiple_include.us'],
-          'tmp/nested_underscore_include.html': ['test/fixtures/underscore/nested_include.us']
+          'tmp/underscore/basic_template.html': ['test/fixtures/underscore/basic_template.html'],
+          'tmp/underscore/single_include.html': ['test/fixtures/underscore/single_include.html'],
+          'tmp/underscore/multiple_include.html': ['test/fixtures/underscore/multiple_include.html'],
+          'tmp/underscore/nested_include.html': ['test/fixtures/underscore/nested_include.html'],
+          'tmp/underscore/specific_context.html': ['text/fixtures/underscore/specific_context.html']
+        }
+      },
+      underscoreTests: {
+        context: {
+          underscoreTestsSpecificContext: "underscore tests specific context"
+        },
+        files: {
+          'tmp/underscore/basic_template.html': ['test/fixtures/underscore/basic_template.us'],
+          'tmp/underscore/single_include.html': ['test/fixtures/underscore/single_include.us'],
+          'tmp/underscore/multiple_include.html': ['test/fixtures/underscore/multiple_include.us'],
+          'tmp/underscore/nested_include.html': ['test/fixtures/underscore/nested_include.us'],
+          'tmp/underscore/specific_context.html': ['test/fixtures/underscore/specific_context.us']
         }
       },
       handlebarsTests: {

@@ -98,7 +98,8 @@ module.exports = function(grunt) {
   };
 
   buildTemplateContext = function(task) {
-    templateContext = _.extend(task.data.context, {
+    var data = _.extend(task.data.context, options.context);
+    templateContext = _.extend(data, {
                                 include: includeTemplate
                               });
     return templateContext;
