@@ -1,2 +1,0 @@
-<%= include('test/fixtures/includes/hello_world.us') %>
-<%= include('test/fixtures/includes/goodbye_world.us') %>

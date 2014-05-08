@@ -1,6 +1,6 @@
 /*
- * grunt-underscore-pages
- * https://github.com/nloding/grunt-underscore-pages
+ * grunt-compiled-pages
+ * https://github.com/nloding/grunt-compiled-pages
  *
  * Copyright (c) 2014 Nathan Loding
  * Licensed under the MIT license.
@@ -30,18 +30,34 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     compiled_pages: {
-      test_target: {
+      options: {
+        htmlAsHandlebars: false
+      },
+      context: {
+        global_variable: 'global'
+      },
+      htmlAsUnderscoreTests: {
+
+      },
+      underscoreTests: {
+        options: {
+          htmlAsHandlebars: true,
+          anotherRandomOption: true
+        },
         context: {
           css: 'app/styles.css',
           js: 'app/scripts.js'
         },
         files: {
-          'tmp/basic_underscore_template.html': ['test/fixtures/basic_template.us'],
-          'tmp/single_underscore_include.html': ['test/fixtures/single_include.us'],
-          'tmp/multiple_underscore_include.html': ['test/fixtures/multiple_include.us'],
-          'tmp/nested_underscore_include.html': ['test/fixtures/nested_include.us']
+          'tmp/basic_underscore_template.html': ['test/fixtures/underscore/basic_template.us'],
+          'tmp/single_underscore_include.html': ['test/fixtures/underscore/single_include.us'],
+          'tmp/multiple_underscore_include.html': ['test/fixtures/underscore/multiple_include.us'],
+          'tmp/nested_underscore_include.html': ['test/fixtures/underscore/nested_include.us']
         }
-      }
+      },
+      handlebarsTests: {
+
+      },
     },
 
     // Unit tests.

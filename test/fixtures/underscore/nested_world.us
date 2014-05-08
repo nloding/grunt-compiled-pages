@@ -1,0 +1,2 @@
+<%= include('test/fixtures/underscore/hello_world.us') %>
+<%= include('test/fixtures/underscore/goodbye_world.us') %>
