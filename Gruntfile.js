@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       htmlAsUnderscoreTests: {
         context: {
-          underscoreTestsSpecificContext: "underscore tests specific context"
+          underscoreTestsSpecificContext: "test specific context"
         },
         files: {
           'tmp/htmlAsUnderscore/basic_template.html': ['test/fixtures/htmlAsUnderscore/basic_template.html'],
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
       },
       underscoreTests: {
         context: {
-          underscoreTestsSpecificContext: "underscore tests specific context"
+          underscoreTestsSpecificContext: "test specific context"
         },
         files: {
           'tmp/underscore/basic_template.html': ['test/fixtures/underscore/basic_template.us'],
@@ -60,10 +60,7 @@ module.exports = function(grunt) {
           'tmp/underscore/nested_include.html': ['test/fixtures/underscore/nested_include.us'],
           'tmp/underscore/specific_context.html': ['test/fixtures/underscore/specific_context.us']
         }
-      },
-      handlebarsTests: {
-
-      },
+      }
     },
 
     // Unit tests.
