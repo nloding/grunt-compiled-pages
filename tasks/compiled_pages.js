@@ -9,7 +9,7 @@
 
 /*
  * todo list:
- * todo -> allow for and test include dir array
+ * todo -> test include data context
  * todo -> can handlebars ever work? require('handlebars').registerHelper(...) did not work
  */
 
