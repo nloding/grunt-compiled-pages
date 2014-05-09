@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       htmlAsUnderscoreTests: {
         context: {
-          underscoreTestsSpecificContext: "test specific context"
+          htmlAsUnderscoreTestsSpecificContext: "test specific context"
         },
         files: {
           'tmp/htmlAsUnderscore/basic_template.html': ['test/fixtures/htmlAsUnderscore/basic_template.html'],
@@ -59,6 +59,15 @@ module.exports = function(grunt) {
           'tmp/underscore/multiple_include.html': ['test/fixtures/underscore/multiple_include.us'],
           'tmp/underscore/nested_include.html': ['test/fixtures/underscore/nested_include.us'],
           'tmp/underscore/specific_context.html': ['test/fixtures/underscore/specific_context.us']
+        }
+      },
+      templatePathTests: {
+        options: {
+          templatePath: ['test/fixtures/includes']
+        },
+        files: {
+          'tmp/underscore/template_path.html': ['test/fixtures/underscore/template_path.us'],
+          'tmp/htmlAsUnderscore/template_path.html': ['test/fixtures/htmlAsUnderscore/template_path.html']
         }
       }
     },

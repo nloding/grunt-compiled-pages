@@ -65,5 +65,17 @@ exports.underscore_pages = {
         var expected = grunt.file.read('test/expected/specific_context.html');
         test.equal(actual, expected, 'specific context template should complile');
         test.done();
+    },
+    templatePathUnderscoreInclude: function(test) {
+        var actual = grunt.file.read('tmp/underscore/template_path.html');
+        var expected = grunt.file.read('test/expected/template_path.html');
+        test.equal(actual, expected, 'template path include template should complile');
+        test.done();
+    },
+    templatePathHtmlAsUnderscoreInclude: function(test) {
+        var actual = grunt.file.read('tmp/htmlAsUnderscore/template_path.html');
+        var expected = grunt.file.read('test/expected/template_path.html');
+        test.equal(actual, expected, 'template path include template should complile');
+        test.done();
     }
 };

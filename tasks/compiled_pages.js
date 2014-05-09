@@ -16,7 +16,7 @@
 'use strict';
 
 module.exports = function(grunt) {
-  var templateContext, options, buildTemplateContext, extensionOf, fs, htmlFor, includeTemplate, _;
+  var templateContext, options, buildTemplateContext, extensionOf, fs, htmlFor, includeTemplate, _, locateTemplate;
   _ = require("lodash");
   fs = require("fs");
   
@@ -42,23 +42,46 @@ module.exports = function(grunt) {
     });
   });
 
-  includeTemplate = function(fileName, data) {
-    var error, html, includeSource, format;
+  includeTemplate = function(filename, data) {
+    var html, includeSource, format, template;
+    template = locateTemplate(filename);
     html = '';
-    if (grunt.file.exists(fileName)) {
+
+    if (template) {
       try {
-        format = (extensionOf(fileName) || "html").toLowerCase();
-        includeSource = grunt.file.read(fileName);
+        format = (extensionOf(filename) || "html").toLowerCase();
+        includeSource = grunt.file.read(template);
         data = _.extend(templateContext, data);
         html = htmlFor('us', includeSource, data);
-      } catch (_error) {
-        error = _error;
-        grunt.log.writeln("Unable to process include for " + fileName);
+      } catch (error) {
+        grunt.log.writeln("Unable to process include for " + filename);
       }
     } else {
-      grunt.log.writeln(fileName + " not found");
+      grunt.log.writeln("Unable to locate the include file " + filename);
     }
+
     return html;
+  };
+
+  locateTemplate = function(filename) {
+    if (grunt.file.exists(filename)) {
+      return filename;
+    }
+
+    var tpl;
+
+    options.templatePath.forEach(function(tplPath) {
+      if (!(/\/$/.test(tplPath))) {
+        tplPath += '/';
+      }
+
+      var fullTemplate = tplPath + filename;
+      if (grunt.file.exists(fullTemplate)) {
+        tpl = fullTemplate;
+      }
+    });
+    
+    return tpl;
   };
 
   extensionOf = function(fileName) {
@@ -70,7 +93,13 @@ module.exports = function(grunt) {
   };
 
   buildTemplateContext = function(task) {
-    var data = _.extend(task.data.context, options.context);
+    var data;
+    if (task.data.context) {
+      data = _.extend(task.data.context, options.context);
+    } else {
+      data = options.context;
+    }
+
     templateContext = _.extend(data, {
                                 include: includeTemplate
                               });

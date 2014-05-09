@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Basic Template</title>
+    <title>Template Path Include</title>
 
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
   </head>
   <body>
+    <%= include('hello_world.us') %>
     <script type="text/javascript" src="<%= js %>"></script>
-    <div><%= htmlAsUnderscoreTestsSpecificContext %></div>
   </body>
 </html>
