@@ -39,14 +39,14 @@ module.exports = function(grunt) {
       },
       htmlAsUnderscoreTests: {
         context: {
-          
+          underscoreTestsSpecificContext: "underscore tests specific context"
         },
         files: {
-          'tmp/underscore/basic_template.html': ['test/fixtures/underscore/basic_template.html'],
-          'tmp/underscore/single_include.html': ['test/fixtures/underscore/single_include.html'],
-          'tmp/underscore/multiple_include.html': ['test/fixtures/underscore/multiple_include.html'],
-          'tmp/underscore/nested_include.html': ['test/fixtures/underscore/nested_include.html'],
-          'tmp/underscore/specific_context.html': ['text/fixtures/underscore/specific_context.html']
+          'tmp/htmlAsUnderscore/basic_template.html': ['test/fixtures/htmlAsUnderscore/basic_template.html'],
+          'tmp/htmlAsUnderscore/single_include.html': ['test/fixtures/htmlAsUnderscore/single_include.html'],
+          'tmp/htmlAsUnderscore/multiple_include.html': ['test/fixtures/htmlAsUnderscore/multiple_include.html'],
+          'tmp/htmlAsUnderscore/nested_include.html': ['test/fixtures/htmlAsUnderscore/nested_include.html'],
+          'tmp/htmlAsUnderscore/specific_context.html': ['test/fixtures/htmlAsUnderscore/specific_context.html']
         }
       },
       underscoreTests: {
