@@ -8,8 +8,6 @@
 
 
 /*
- * todo list:
- * todo -> test include data context
  * todo -> can handlebars ever work? require('handlebars').registerHelper(...) did not work
  */
 

@@ -46,7 +46,8 @@ module.exports = function(grunt) {
           'tmp/htmlAsUnderscore/single_include.html': ['test/fixtures/htmlAsUnderscore/single_include.html'],
           'tmp/htmlAsUnderscore/multiple_include.html': ['test/fixtures/htmlAsUnderscore/multiple_include.html'],
           'tmp/htmlAsUnderscore/nested_include.html': ['test/fixtures/htmlAsUnderscore/nested_include.html'],
-          'tmp/htmlAsUnderscore/specific_context.html': ['test/fixtures/htmlAsUnderscore/specific_context.html']
+          'tmp/htmlAsUnderscore/specific_context.html': ['test/fixtures/htmlAsUnderscore/specific_context.html'],
+          'tmp/htmlAsUnderscore/include_data.html': ['test/fixtures/htmlAsUnderscore/include_data.html']
         }
       },
       underscoreTests: {
@@ -58,7 +59,8 @@ module.exports = function(grunt) {
           'tmp/underscore/single_include.html': ['test/fixtures/underscore/single_include.us'],
           'tmp/underscore/multiple_include.html': ['test/fixtures/underscore/multiple_include.us'],
           'tmp/underscore/nested_include.html': ['test/fixtures/underscore/nested_include.us'],
-          'tmp/underscore/specific_context.html': ['test/fixtures/underscore/specific_context.us']
+          'tmp/underscore/specific_context.html': ['test/fixtures/underscore/specific_context.us'],
+          'tmp/underscore/include_data.html': ['test/fixtures/underscore/include_data.us']
         }
       },
       templatePathTests: {

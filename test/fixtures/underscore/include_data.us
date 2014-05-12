@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Include Data Template</title>
+
+    <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
+  </head>
+  <body>
+    <script type="text/javascript" src="<%= js %>"></script>
+    <div><%= underscoreTestsSpecificContext %></div>
+    <div><%= include('test/fixtures/underscore/data_include.us', {'includedData': 'this is included data'}) %></div>
+  </body>
+</html>

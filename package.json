@@ -1,6 +1,6 @@
 {
   "name": "grunt-compiled-pages",
-  "description": "Compile underscore/handlebars templates into static HTML pages, with support for includiing templates.",
+  "description": "Compile underscore templates into static HTML pages, with support for includiing templates.",
   "version": "0.0.1",
   "homepage": "https://github.com/nloding/grunt-compiled-pages",
   "author": {
