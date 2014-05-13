@@ -91,10 +91,10 @@ module.exports = function(grunt) {
   };
 
   buildTemplateContext = function(task) {
-    var data;
+    var data = {};
     if (task.data.context) {
       data = _.extend(task.data.context, options.context);
-    } else {
+    } else if (options.context) {
       data = options.context;
     }
 

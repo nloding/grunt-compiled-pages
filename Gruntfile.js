@@ -71,6 +71,11 @@ module.exports = function(grunt) {
           'tmp/underscore/template_path.html': ['test/fixtures/underscore/template_path.us'],
           'tmp/htmlAsUnderscore/template_path.html': ['test/fixtures/htmlAsUnderscore/template_path.html']
         }
+      },
+      destDirectoryTests: {
+        files: {
+          'tmp/destDirectory': ['test/fixtures/underscore/basic_template.us', 'test/fixtures/underscore/multiple_include.us']
+        }
       }
     },
 

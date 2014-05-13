@@ -1,7 +1,7 @@
 {
   "name": "grunt-compiled-pages",
   "description": "Compile underscore templates into static HTML pages, with support for includiing templates.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/nloding/grunt-compiled-pages",
   "author": {
     "name": "Nathan Loding",
