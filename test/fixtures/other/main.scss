@@ -1,0 +1,20 @@
+// var to change
+$sassVar = <%= sass.background_color %>
+
+
+body {
+    background-color: $sassVar;
+}
+
+@mixin htags{
+    clear: both;
+    display: block;
+    margin-bottom: .5em;
+}
+
+h1 {
+   @include htags;
+    font-size: 1.2em;
+    color: $sassVar;
+    font-weight:bold;
+}

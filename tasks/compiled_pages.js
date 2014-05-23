@@ -27,10 +27,32 @@ module.exports = function(grunt) {
     _this = this;
     options = this.options();
 
+    if (options.replaceSourceDirectory && !options.replaceSourceDirectory.match(/\/$/)) {
+      options.replaceSourceDirectory = options.replaceSourceDirectory + '/';
+    }
+
     this.files.forEach(function(filePair) {
       filePair.src.forEach(function(src) {
         format = (extensionOf(src) || "html").toLowerCase();
-        dest = filePair.dest.match(/\.html$/) ? filePair.dest : [filePair.dest.replace(/\/$/, ''), src.replace(/.*\//, '').replace(/\..+$/, '.html')].join('/');
+        dest = filePair.dest;
+
+        // if it's a directory (doesn't contain period)
+        // todo -> better logic here?
+        if (!filePair.dest.match(/\./)) {
+          dest = filePair.dest;
+          if (!dest.match(/\/$/)) {
+            dest = dest + '/';
+          }
+
+          if (options.removeSourceDirectory) {
+            dest = dest + src.replace(/.+\//, '').replace(/\.us$/, '.html');
+          } else if (options.replaceSourceDirectory) {
+            dest = dest + src.replace(/.+\//, options.replaceSourceDirectory).replace(/\.us$/, '.html');
+          } else {
+            dest = dest + src.replace(/\.us$/, '.html');
+          }
+        }
+
         source = grunt.file.read(src);
         context = buildTemplateContext(_this);
         grunt.file.write(dest, htmlFor(format, source, context));

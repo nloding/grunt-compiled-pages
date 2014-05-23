@@ -72,9 +72,36 @@ module.exports = function(grunt) {
           'tmp/htmlAsUnderscore/template_path.html': ['test/fixtures/htmlAsUnderscore/template_path.html']
         }
       },
-      destDirectoryTests: {
+      destDirectoryPlainTests: {
         files: {
           'tmp/destDirectory': ['test/fixtures/underscore/basic_template.us', 'test/fixtures/underscore/multiple_include.us']
+        }
+      },
+      destDirectoryRemoveTests: {
+        options: {
+          removeSourceDirectory: true
+        },
+        files: {
+          'tmp/destDirectory': ['test/fixtures/underscore/basic_template.us', 'test/fixtures/underscore/multiple_include.us']
+        }
+      },
+      destDirectoryReplaceTests: {
+        options: {
+          replaceSourceDirectory: 'replacedSourceDirectory'
+        },
+        files: {
+          'tmp/destDirectory': ['test/fixtures/underscore/basic_template.us', 'test/fixtures/underscore/multiple_include.us']
+        }
+      },
+      otherFileTests: {
+        context: {
+          sass: {
+            background_color: "#ffffff"
+          }
+        },
+        files: {
+          'tmp/other/main.scss': ['test/fixtures/other/main.scss'],
+          'tmp/other/main.css': ['test/fixtures/other/main.css']
         }
       }
     },

@@ -89,5 +89,45 @@ exports.underscore_pages = {
         var expected = grunt.file.read('test/expected/include_data.html');
         test.equal(actual, expected, 'included data template should complile');
         test.done();
+    },
+    plainDestDirectoryTest: function(test) {
+        var actual = grunt.file.read('tmp/destDirectory/test/fixtures/underscore/basic_template.html');
+        var expected = grunt.file.read('test/expected/basic_template.html');
+        test.equal(actual, expected, 'plain destination directory basic_template should complile');
+
+        actual = grunt.file.read('tmp/destDirectory/test/fixtures/underscore/multiple_include.html');
+        expected = grunt.file.read('test/expected/multiple_include.html');
+        test.equal(actual, expected, 'plain destination directory multiple_include should complile');
+        test.done();
+    },
+    removeDestDirectoryTest: function(test) {
+        var actual = grunt.file.read('tmp/destDirectory/basic_template.html');
+        var expected = grunt.file.read('test/expected/basic_template.html');
+        test.equal(actual, expected, 'remove destination directory basic_template should complile');
+
+        actual = grunt.file.read('tmp/destDirectory/multiple_include.html');
+        expected = grunt.file.read('test/expected/multiple_include.html');
+        test.equal(actual, expected, 'remove destination directory multiple_include should complile');
+        test.done();
+    },
+    replaceDestDirectoryTest: function(test) {
+        var actual = grunt.file.read('tmp/destDirectory/replacedSourceDirectory/basic_template.html');
+        var expected = grunt.file.read('test/expected/basic_template.html');
+        test.equal(actual, expected, 'replaced destination directory basic_template should complile');
+
+        actual = grunt.file.read('tmp/destDirectory/replacedSourceDirectory/multiple_include.html');
+        expected = grunt.file.read('test/expected/multiple_include.html');
+        test.equal(actual, expected, 'replaced destination directory multiple_include should complile');
+        test.done();
+    },
+    otherFilesTest: function(test) {
+        var actual = grunt.file.read('tmp/other/main.scss');
+        var expected = grunt.file.read('test/expected/main.scss');
+        test.equal(actual, expected, 'main.scss should complile');
+
+        actual = grunt.file.read('tmp/other/main.css');
+        expected = grunt.file.read('test/expected/main.css');
+        test.equal(actual, expected, 'main.scss should complile');
+        test.done();
     }
 };
